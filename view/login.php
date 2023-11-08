@@ -1,78 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-    
-    <title>Form Login</title>
+
+<body>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
         .card {
-            background-color: #fff;
-            max-width: 600px; /* Atur lebar kartu sesuai kebutuhan Anda */
+            max-width: 300px;
             padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            box-shadow: 0px 0px 5px 0px #999;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-left: 300px;
         }
-
         h2 {
-            color: #333;
+            text-align: center;
         }
-
-        form {
-            margin-top: 20px;
-        }
-
         label {
-            display: block;
-            margin-bottom: 5px;
             font-weight: bold;
         }
-
-        input[type="email"],
-        input[type="password"] {
-            width: 350px; /* Lebar formulir tetap 350px */
+        input {
+            width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
+            margin: 5px 0;
             border: 1px solid #ccc;
             border-radius: 3px;
         }
-
         input[type="submit"] {
             background-color: #007bff;
             color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
             cursor: pointer;
         }
-
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
     </style>
-</head>
-<body>
+
     <div class="card">
         <h2>Login</h2>
-        
-        <form action="login_save" method="post">
+        <form action="login?action=save" method="POST">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="pass" required><br><br>
-
+            <input type="email" id="email" name="email" required>
+            
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass" required>
+            
             <input type="submit" value="Login">
         </form>
     </div>
 </body>
-</html>
+

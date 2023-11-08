@@ -7,6 +7,7 @@ require_once 'controller/function.php';
 require_once 'config/config.php';
 require_once 'controller/RegisterController.php';
 require_once 'controller/ShopController.php';
+require_once 'controller/admin.php';
 
 $url = $_GET['url'] ?? '/web-judol';
 switch ($url) {
@@ -16,6 +17,11 @@ switch ($url) {
             RegisterController::save();
         }
         RegisterController::register();
+        break;
+    case 'login':
+        $action = $_GET['action'] ?? '';
+        if ($action === 'save') {Admin::login_save();}
+        Admin::login_form();
         break;
     case 'item':
         Item::index();
