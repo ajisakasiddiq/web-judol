@@ -14,7 +14,7 @@ switch ($url) {
     case 'register':
         $action = $_GET['action'] ?? '';
         if ($action === 'save') {
-            Cusstomer::register_save();
+            Customer::register_save();
         }
         Customer::register_form();
         break;
@@ -23,6 +23,15 @@ switch ($url) {
         if ($action === 'save') {Admin::login_save();}
         Admin::login_form();
         break;
+   case 'logout':
+    $action = $_GET['action'] ?? '';
+
+    if ($action === 'logout') {
+        LoginModel::logout();
+        // Redirect ke halaman login atau halaman lain yang sesuai
+        header("Location:".BASEURL."login");
+        exit();
+    }
     case 'item':
         Item::index();
         break;

@@ -34,6 +34,18 @@ class LoginModel {
             return null; // Kredensial tidak cocok, kembalikan null
         }
     }
+
+    public static function logout() {
+        session_start();
+        // Hapus semua data sesi
+        session_unset();
+        // Hancurkan sesi
+        session_destroy();
+        // Redirect ke halaman login atau halaman lain yang sesuai
+        header("Location: " . BASEURL . "login");
+        exit();
+    }
+    
 }
 
 

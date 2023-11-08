@@ -3,7 +3,7 @@
 require_once(__DIR__ . '/../model/Auth.php');
 require_once 'controller/controllers.php';
 
-class RegisterController {
+class Customer {
     static function register_form() {
         view('forms/customer-register');
     }
