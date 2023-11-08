@@ -11,10 +11,8 @@ class LoginModel {
 
         // Lakukan pemeriksaan kredensial
         $email = mysqli_real_escape_string($conn, $email);
-        $pass = hash('sha256', $pass);
-
-        $sql = "SELECT * FROM user WHERE email='$email' AND pass='$pass'";
-        $result = mysqli_query($conn, $sql);
+    $sql = "SELECT * FROM user WHERE email='$email' AND pass='$pass'"; // Menghapus hash pada $pass
+    $result = mysqli_query($conn, $sql);
 
         // Periksa apakah kueri berhasil
         if (!$result) {
