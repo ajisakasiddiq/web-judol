@@ -7,6 +7,13 @@ class Item
     {
         view('shop/item', ['header' => titleheader('Halaman Item', 'h1', 'text-center mb-3')]);
     }
+    static function show($id)
+    {
+        view('shop/show/ItemShow', [
+            'item' => ItemShow::selectById($id),
+            'header' => titleheader('Halaman Item', 'h1', 'text-center mb-3')
+        ]);
+    }
 }
 class Cart
 {
