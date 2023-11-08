@@ -75,6 +75,11 @@ if ($url === 'role') {
     <li class="nav-item">
         <a class="nav-link" href="login">login</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="profile">profile</a>
+    </li>
+  
+        <br>
     <?php
    session_start();
    // Periksa apakah user_id ada dalam sesi
@@ -87,6 +92,14 @@ if ($url === 'role') {
    }
    
     ?>
+      <li class="nav-item">
+        <a class="nav-link" href="login">login</a>
+    </li>
+     <li class="nav-item">
+        <a class="nav-link" href="logout">Logout</a>
+    </li>
+   
+        
 </ul>
 
                 </div>

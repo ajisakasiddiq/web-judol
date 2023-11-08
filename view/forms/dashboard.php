@@ -6,10 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="logout?action=logout" method="POST">
-            <button type="submit" class="register-button">logout</button>
-        </form>
-        <br>
+
     <h1>Ini Halaman Dashboard</h1>
 
     

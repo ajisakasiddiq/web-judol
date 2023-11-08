@@ -25,15 +25,16 @@ switch ($url) {
         break;
    case 'logout':
     $action = $_GET['action'] ?? '';
-
-    if ($action === 'logout') {
-        LoginModel::logout();
+    if ($action === 'logoutt') {
+       Auth::logout();
         // Redirect ke halaman login atau halaman lain yang sesuai
-        header("Location:".BASEURL."login");
-        exit();
-    }
+    } Auth::logout();
+    break;
     case 'dashboard':
         Admin::dashboard();
+        break;
+    case 'profile':
+        Customer::profile();
         break;
     case 'item':
         Item::index();

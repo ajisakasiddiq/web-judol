@@ -7,7 +7,9 @@ class Customer {
     static function register_form() {
         view('forms/customer-register');
     }
-
+    static function profile() {
+        view('forms/customer-profile');
+    }
     static function register_save() {
         $nama = $_POST['nama'];
         $no_telpon = $_POST['no_telpon'];

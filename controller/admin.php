@@ -13,12 +13,15 @@ class Admin {
             $email = $_POST['email'];
             $pass = $_POST['pass'];
     
-            $user = LoginModel::authenticateUser($email, $pass);
+            $user = Auth::authenticateUser($email, $pass);
     
             if ($user) {
                 session_start();
                 $_SESSION['user_id'] = $user['user_id'];
                 $_SESSION['id_role_detail'] = $user['id_role_detail'];
+                $_SESSION['nama'] = $user['nama'];
+                $_SESSION['no_telpon'] = $user['no_telpon'];
+                $_SESSION['email'] = $user['email'];
                 // Periksa nilai id_role_detail
                 if ($user['id_role_detail'] == 1) {
                     header("Location: " . BASEURL . "dashboard");

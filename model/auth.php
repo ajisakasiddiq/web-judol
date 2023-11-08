@@ -1,5 +1,5 @@
 <?php
-class LoginModel {
+class Auth {
     public static function authenticateUser($email, $pass) {
         // Hubungkan ke database (gunakan koneksi yang sesuai)
         $conn = mysqli_connect("localhost", "root", "", "db_judol");
