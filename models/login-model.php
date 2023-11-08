@@ -1,0 +1,27 @@
+<?php
+require_once('config/conn.php');
+
+
+class LoginModel {
+    private $conn;
+
+    public function __construct($conn) {
+        $this->conn = $conn;
+    }
+
+    public function getUserByEmail($email) {
+        $sql = "SELECT * FROM user WHERE email = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            return $result->fetch_assoc();
+        } else {
+            return null;
+        }
+    }
+}
+
+?>

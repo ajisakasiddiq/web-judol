@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form Login</title>
+    <title>Form Pendaftaran</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,6 +36,8 @@
             font-weight: bold;
         }
 
+        input[type="text"],
+        input[type="tel"],
         input[type="email"],
         input[type="password"] {
             width: 350px; /* Lebar formulir tetap 350px */
@@ -61,15 +63,24 @@
 </head>
 <body>
     <div class="card">
-        <h2>Login</h2>
-        <form action="proses_login.php" method="post">
+        <h2>Pendaftaran</h2>
+        <form action="controllers/main.php?route=process_register" method="post">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required><br><br>
+
+            <label for="no_telpon">Nomor Telepon:</label>
+            <input type="tel" id="no_telpon" name="no_telpon" required><br><br>
+
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br><br>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br><br>
 
-            <input type="submit" value="Login">
+            <!-- <label for="id_role_detail">ID Peran Rinci:</label>
+            <input type="text" id="id_role_detail" name="id_role_detail" required><br><br> -->
+
+            <input type="submit" value="Daftar">
         </form>
     </div>
 </body>
