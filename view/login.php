@@ -1,3 +1,4 @@
+<div class="container">
 <body>
     <style>
          .register-button {
@@ -61,14 +62,14 @@
 
     <div class="card">
         <h2>Login</h2>
-        <form action="login?action=save" method="POST">
+        <form name="submit" action="login?action=save" method="post">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             
             <label for="pass">Password:</label>
             <input type="password" id="pass" name="pass" required>
             
-            <input class="login-button" type="submit" value="Login">
+            <input class="login-button" name="submit" type="submit"  value="Login">
         </form>
 
         <form action="register?action=register" method="POST">
@@ -76,3 +77,4 @@
         </form>
     </div>
 </body>
+    </div>

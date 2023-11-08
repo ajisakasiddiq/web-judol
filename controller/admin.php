@@ -7,28 +7,33 @@ class Admin {
         view('login');
     }
 
-    public static function login_save() {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $email = $_POST['email'];
-            $pass = $_POST['pass'];
+  
+    static function login_save() {
+       
+            if (isset($_POST['submit'])) {
+                $email = $_POST['email'];
+                $pass = $_POST['pass'];
     
-            // Create an instance of the LoginModel
-            $loginModel = new LoginModel();
-            
-            // Call the non-static method on the instance
-            $user = $loginModel->authenticateUser($email, $pass);
+                $user = LoginModel::authenticateUser($email, $pass);
     
-            if ($user) {
-                // Autentikasi berhasil, lanjutkan ke halaman admin
-                $_SESSION['user_id'] = $user['user_id'];
-                // Redirect to the admin page or display a success message
-                header('Location:' . BASEURL . 'success.php');
-                echo 'Login berhasil! Anda sekarang masuk sebagai admin.';
-            } else {
-                // Authentication failed, display an error message
-                echo 'Autentikasi gagal. Pastikan email dan password Anda benar.';
+                if ($user) {
+                    session_start();
+                    $_SESSION['nama'] = $user['nama'];
+                    header("Location: " . BASEURL . "success.php");
+                    exit();
+                } else {
+                    $error_message = "Email atau password Anda salah. Silakan coba lagi!";
+                    header("Location: " . BASEURL . "gagal.php");
+                    exit();
+                }
             }
         }
-    }
     
-}
+        public static function showLoginForm() {
+            // Di sini Anda dapat menampilkan halaman login
+            // Misalnya, jika menggunakan PHP, Anda dapat memuat file tampilan login.php di sini.
+        }
+    }
+   
+    
+

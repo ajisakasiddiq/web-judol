@@ -3,6 +3,7 @@ require_once 'config/config.php';
 require_once 'controller/function.php';
 require_once 'model/UserModel.php';
 require_once 'controller/RegisterController.php';
+require_once 'controller/admin.php';
 //require_once 'controller/role_controller.php';
 
 abstract class Controller {
@@ -13,6 +14,7 @@ abstract class Controller {
     abstract static function edit($data); // EDIT SPECIFIC
     abstract static function update($data); // UPDATE DATA
     abstract static function remove($data);
+    abstract static function login_save();
 }
 
 interface CustomFunctions {
