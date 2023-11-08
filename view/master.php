@@ -72,9 +72,7 @@ if ($url === 'role') {
     <li class="nav-item">
         <a class="nav-link" href="contact">Contact</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="login">login</a>
-    </li>
+   
     <li class="nav-item">
         <a class="nav-link" href="profile">profile</a>
     </li>
