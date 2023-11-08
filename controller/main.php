@@ -32,6 +32,9 @@ switch ($url) {
         header("Location:".BASEURL."login");
         exit();
     }
+    case 'dashboard':
+        Admin::dashboard();
+        break;
     case 'item':
         Item::index();
         break;

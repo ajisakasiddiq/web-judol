@@ -55,27 +55,40 @@ if ($url === 'role') {
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav mx-auto">
-                        <?php require_once 'config/config.php' ?>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="item">Item</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="cart">Cart</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="order">Order</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login">login</a>
-                        </li>
-                    </ul>
+                <ul class="navbar-nav mx-auto">
+    <?php require_once 'config/config.php' ?>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="item">Item</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="cart">Cart</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="order">Order</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="contact">Contact</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="login">login</a>
+    </li>
+    <?php
+   session_start();
+   // Periksa apakah user_id ada dalam sesi
+   if (isset($_SESSION['user_id'])) {
+       // Periksa nilai id_role_detail
+       if ($_SESSION['id_role_detail'] == 1) {
+           // User memiliki id_role_detail = 2, jadi tampilkan atau sembunyikan tautan "dashboard" berdasarkan kondisi ini
+           echo '<li class="nav-item"><a class="nav-link" href="dashboard">dashboard</a></li>';
+       }
+   }
+   
+    ?>
+</ul>
+
                 </div>
             </div>
         </nav>

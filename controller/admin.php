@@ -9,27 +9,34 @@ class Admin {
 
   
     static function login_save() {
-       
-            if (isset($_POST['submit'])) {
-                $email = $_POST['email'];
-                $pass = $_POST['pass'];
+        if (isset($_POST['submit'])) {
+            $email = $_POST['email'];
+            $pass = $_POST['pass'];
     
-                $user = LoginModel::authenticateUser($email, $pass);
+            $user = LoginModel::authenticateUser($email, $pass);
     
-                if ($user) {
-                    session_start();
-                    $_SESSION['nama'] = $user['nama'];
-                    header("Location: " . BASEURL . "success.php");
-                    exit();
+            if ($user) {
+                session_start();
+                $_SESSION['user_id'] = $user['user_id'];
+                $_SESSION['id_role_detail'] = $user['id_role_detail'];
+                // Periksa nilai id_role_detail
+                if ($user['id_role_detail'] == 1) {
+                    header("Location: " . BASEURL . "dashboard");
                 } else {
-                    $error_message = "Email atau password Anda salah. Silakan coba lagi!";
-                    header("Location: " . BASEURL . "gagal.php");
-                    exit();
+                    header("Location: " . BASEURL . "success.php");
                 }
+                exit();
+            } else {
+                $error_message = "Email atau password Anda salah. Silakan coba lagi!";
+                header("Location: " . BASEURL . "gagal.php");
+                exit();
             }
         }
+    }
     
-        public static function showLoginForm() {
+    
+         static function dashboard() {
+            view('forms/dashboard');
             // Di sini Anda dapat menampilkan halaman login
             // Misalnya, jika menggunakan PHP, Anda dapat memuat file tampilan login.php di sini.
         }

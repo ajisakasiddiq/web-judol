@@ -72,7 +72,7 @@
             <input class="login-button" name="submit" type="submit"  value="Login">
         </form>
 
-        <form action="register?action=register" method="POST">
+        <form action="register" method="POST">
             <button type="submit" class="register-button">Register</button>
         </form>
     </div>
