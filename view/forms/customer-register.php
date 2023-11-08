@@ -1,8 +1,9 @@
 <?php
-$url = $_GET['url'] ?? '/mvc-dynamic-tugas';
+$url = $_GET['url'] ?? '/web-judol';
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Form Pendaftaran</title>
     <style>
@@ -19,7 +20,8 @@ $url = $_GET['url'] ?? '/mvc-dynamic-tugas';
 
         .card {
             background-color: #fff;
-            max-width: 600px; /* Atur lebar kartu sesuai kebutuhan Anda */
+            max-width: 600px;
+            /* Atur lebar kartu sesuai kebutuhan Anda */
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0px 0px 5px 0px #999;
@@ -43,7 +45,8 @@ $url = $_GET['url'] ?? '/mvc-dynamic-tugas';
         input[type="tel"],
         input[type="email"],
         input[type="password"] {
-            width: 350px; /* Lebar formulir tetap 350px */
+            width: 350px;
+            /* Lebar formulir tetap 350px */
             padding: 10px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -64,6 +67,7 @@ $url = $_GET['url'] ?? '/mvc-dynamic-tugas';
         }
     </style>
 </head>
+
 <body>
     <div class="card">
         <h2>Pendaftaran</h2>
@@ -87,4 +91,5 @@ $url = $_GET['url'] ?? '/mvc-dynamic-tugas';
         </form>
     </div>
 </body>
+
 </html>

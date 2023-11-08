@@ -1,3 +1,3 @@
 <?php
-define('BASEURL', '/mvc-dynamic-tugas/');
+define('BASEURL', '/web-judol/');
 # Digunakan untuk menentukan base url menyesuaikan direktori
