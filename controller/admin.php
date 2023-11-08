@@ -26,7 +26,7 @@ class Admin {
                 if ($user['id_role_detail'] == 1) {
                     header("Location: " . BASEURL . "dashboard");
                 } else {
-                    header("Location: " . BASEURL . "success.php");
+                    header("Location: " . BASEURL . "item");
                 }
                 exit();
             } else {
