@@ -1,17 +1,15 @@
 
 
 <?php
+
 require_once 'controller/controllers.php';
 require_once 'controller/function.php';
 require_once 'config/config.php';
 require_once 'controller/RegisterController.php';
+require_once 'controller/ShopController.php';
 
 $url = $_GET['url'] ?? '/web-judol';
 switch ($url) {
-        // case 'roles':
-        //     $type = $_GET['type'] ?? 0;
-        //     RoleController::index();
-        //     break;
     case 'register':
         $action = $_GET['action'] ?? '';
         if ($action === 'save') {
@@ -19,6 +17,19 @@ switch ($url) {
         }
         RegisterController::register();
         break;
+    case 'item':
+        Item::index();
+        break;
+    case 'cart':
+        Cart::index();
+        break;
+    case 'order':
+        Order::index();
+        break;
+    case 'contact':
+        Contact::index();
+        break;
+
         //     case 'show':
         //         $id = $_GET['id'] ?? 0;
         //         StudentController::show($id);
