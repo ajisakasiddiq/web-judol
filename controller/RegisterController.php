@@ -4,7 +4,7 @@ require_once 'controller/controllers.php';
 
 class RegisterController {
     static function register() {
-        view('forms/customer-register', ['header' => titleheader('Menambah Data Mahasiswa', 'h1', 'text-center mb-3')]);
+        view('forms/customer-register');
     }
 
     static function save() {
@@ -19,7 +19,7 @@ class RegisterController {
         // Simpan data ke database atau lakukan tindakan lain yang diperlukan
         if (UserModel::insert($nama, $no_telpon, $email, $pass, $id_role_detail)) {
             // Arahkan ke halaman utama
-            header('Location: '.BASEURL);
+            header('Location: '.BASEURL.'success.php');
         } else {
             // Tindakan jika penyimpanan gagal
             view('subview/add', ['header' => titleheader('Menambah Data Mahasiswa Gagal', 'h1', 'text-center mb-3')]);
