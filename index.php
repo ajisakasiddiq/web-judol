@@ -1,2 +1,3 @@
 <?php
-include 'views/forms/customer-register.php';
+include 'view/master.php';
+?>
