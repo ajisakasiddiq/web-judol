@@ -1,5 +1,6 @@
 <?php
-require_once(__DIR__ . '/../model/UserModel.php');
+
+require_once(__DIR__ . '/../model/Auth.php');
 require_once 'controller/controllers.php';
 
 class RegisterController {

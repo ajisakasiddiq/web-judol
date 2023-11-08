@@ -1,7 +1,7 @@
 <?php
 require_once 'config/config.php';
 require_once 'controller/function.php';
-require_once 'model/UserModel.php';
+require_once 'model/Auth.php';
 require_once 'controller/RegisterController.php';
 require_once 'controller/admin.php';
 //require_once 'controller/role_controller.php';

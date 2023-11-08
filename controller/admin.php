@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__ . '/../model/LoginModel.php');
+require_once(__DIR__ . '/../model/Auth.php');
 require_once 'controller/controllers.php';
 
 class Admin {
