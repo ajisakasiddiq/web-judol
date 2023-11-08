@@ -4,11 +4,11 @@ require_once(__DIR__ . '/../model/Auth.php');
 require_once 'controller/controllers.php';
 
 class RegisterController {
-    static function register() {
+    static function register_form() {
         view('forms/customer-register');
     }
 
-    static function save() {
+    static function register_save() {
         $nama = $_POST['nama'];
         $no_telpon = $_POST['no_telpon'];
         $email = $_POST['email'];

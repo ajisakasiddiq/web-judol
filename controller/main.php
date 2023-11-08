@@ -5,7 +5,7 @@
 require_once 'controller/controllers.php';
 require_once 'controller/function.php';
 require_once 'config/config.php';
-require_once 'controller/RegisterController.php';
+require_once 'controller/Customer.php';
 require_once 'controller/ShopController.php';
 require_once 'controller/admin.php';
 
@@ -14,9 +14,9 @@ switch ($url) {
     case 'register':
         $action = $_GET['action'] ?? '';
         if ($action === 'save') {
-            RegisterController::save();
+            Cusstomer::register_save();
         }
-        RegisterController::register();
+        Customer::register_form();
         break;
     case 'login':
         $action = $_GET['action'] ?? '';
