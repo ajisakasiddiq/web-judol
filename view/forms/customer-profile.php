@@ -15,8 +15,7 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" value="<?php echo $_SESSION['email'] ?? ''; ?>" required><br><br>
 
-        <label for="pass">Password:</label>
-        <input type="password" id="pass" name="pass" value="<?php echo $_SESSION['pass'] ?? ''; ?>" required><br><br>
+    
 
         <input type="submit" value="Daftar">
     </form>
