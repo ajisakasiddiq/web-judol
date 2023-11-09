@@ -14,10 +14,10 @@ function ShowTableItem($data)
             for ($k = 0; $k < count($data); $k++) {
                 echo "<td>" . $data[array_keys($data)[$k]][$i] . "</td>";
             }
-            $uid = $data['item_id'][$i];
+            $id = $data['item_id'][$i];
             echo <<<EOD
                 <td class="d-flex justify-content-center">
-                    <a href="item?id=$uid" type="button" class="btn btn-primary">Tampilkan</a>
+                    <a href="itemshow?id=$id" type="button" class="btn btn-primary">Tampilkan</a>
                 </td>
             EOD;
             echo "</tr>";

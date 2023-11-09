@@ -18,7 +18,7 @@ class ItemShow
         }
         return $arr;
     }
-    static function selectById($id = "")
+    static function selectById($id)
     {
         global $conn;
         $sql = "SELECT item_id,nama_item,deskripsi,harga FROM item WHERE item_id=" . $id . ";";

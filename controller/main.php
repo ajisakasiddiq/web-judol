@@ -20,16 +20,19 @@ switch ($url) {
         break;
     case 'login':
         $action = $_GET['action'] ?? '';
-        if ($action === 'save') {Admin::login_save();}
+        if ($action === 'save') {
+            Admin::login_save();
+        }
         Admin::login_form();
         break;
-   case 'logout':
-    $action = $_GET['action'] ?? '';
-    if ($action === 'logoutt') {
-       Auth::logout();
-        // Redirect ke halaman login atau halaman lain yang sesuai
-    } Auth::logout();
-    break;
+    case 'logout':
+        $action = $_GET['action'] ?? '';
+        if ($action === 'logoutt') {
+            Auth::logout();
+            // Redirect ke halaman login atau halaman lain yang sesuai
+        }
+        Auth::logout();
+        break;
     case 'dashboard':
         Admin::dashboard();
         break;
@@ -38,6 +41,10 @@ switch ($url) {
         break;
     case 'item':
         Item::index();
+        break;
+    case 'itemshow':
+        $id = $_GET['item_id'] ?? 0;
+        Item::show($id);
         break;
     case 'cart':
         Cart::index();
