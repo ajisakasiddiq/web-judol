@@ -46,6 +46,14 @@ switch ($url) {
         $id = $_GET['item_id'] ?? 0;
         Item::show($id);
         break;
+    case 'cartshow':
+        $id = $_GET['cart_id'] ?? 0;
+        Cart::show($id);
+        break;
+    case 'ordershow':
+        $id = $_GET['order_id'] ?? 0;
+        Order::show($id);
+        break;
     case 'cart':
         Cart::index();
         break;

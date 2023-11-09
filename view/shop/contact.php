@@ -1,1 +1,1 @@
-<h2>HAIII</h2>
+<h1 class="text-center">INI HALAMAN CONTACT</h1>

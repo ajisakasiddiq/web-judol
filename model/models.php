@@ -21,7 +21,7 @@ class ItemShow
     static function selectById($id)
     {
         global $conn;
-        $sql = "SELECT item_id,nama_item,deskripsi,harga FROM item WHERE item_id=" . $id . ";";
+        $sql = "SELECT `nama_item`,`deskripsi`,`harga` FROM `item`";
         $result = $conn->query($sql);
         $arr = array();
 
@@ -55,10 +55,12 @@ class OrderShow
         }
         return $arr;
     }
-    static function selectById($id = "")
+    static function selectById($id)
     {
         global $conn;
-        $sql = "SELECT item_id,nama_item,deskripsi,harga FROM item WHERE item_id=" . $id . ";";
+        $sql = "SELECT `order`.`order_id`, `item`.`nama_item`,`order`.`total`
+        FROM `order`
+        INNER JOIN `item` ON `order`.`item_id` = `item`.`item_id`";
         $result = $conn->query($sql);
         $arr = array();
 
@@ -95,42 +97,7 @@ class CartShow
     static function selectById($id = "")
     {
         global $conn;
-        $sql = "SELECT item_id,nama_item,deskripsi,harga FROM item WHERE item_id=" . $id . ";";
-        $result = $conn->query($sql);
-        $arr = array();
-
-        if ($result->num_rows > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                foreach ($row as $key => $value) {
-                    $arr[$key][] = $value;
-                }
-            }
-        }
-        return $arr;
-    }
-}
-class ContactShow
-{
-    static function select()
-    {
-        global $conn;
-        $sql = "SELECT item_id,nama_item,deskripsi,harga FROM item";
-        $result = $conn->query($sql);
-        $arr = array();
-
-        if ($result->num_rows > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                foreach ($row as $key => $value) {
-                    $arr[$key][] = $value;
-                }
-            }
-        }
-        return $arr;
-    }
-    static function selectById($id = "")
-    {
-        global $conn;
-        $sql = "SELECT item_id,nama_item,deskripsi,harga FROM item WHERE item_id=" . $id . ";";
+        $sql = "SELECT `cart`.`cart_id`,`item`.`nama_item`,`item`.`deskripsi`,`item`.`harga` FROM `cart` INNER JOIN `item` ON `cart`.`item_id` = `item`.`item_id`";
         $result = $conn->query($sql);
         $arr = array();
 

@@ -10,8 +10,8 @@ class Item
     static function show($id)
     {
         view('shop/show/ItemShow', [
-            'item' => ItemShow::selectById($id),
-            'header' => titleheader('Halaman Item', 'h1', 'text-center mb-3')
+            'item' => ItemShow::selectById(" WHERE item_id=" . $id),
+            'header' => titleheader('Halaman Item detail', 'h1', 'text-center mb-3')
         ]);
     }
 }
@@ -21,6 +21,13 @@ class Cart
     {
         view('shop/cart', ['header' => titleheader('Halaman cart', 'h1', 'text-center mb-3')]);
     }
+    static function show($id)
+    {
+        view('shop/show/cartShow', [
+            'cart' => CartShow::selectById(" WHERE `cart`.`cart_id` = " . $id),
+            'header' => titleheader('Halaman Cart Detail', 'h1', 'text-center mb-3')
+        ]);
+    }
 }
 class Order
 {
@@ -28,11 +35,20 @@ class Order
     {
         view('shop/order', ['header' => titleheader('Halaman order', 'h1', 'text-center mb-3')]);
     }
+    static function show($id)
+    {
+        view('shop/show/orderShow', [
+            'order' => OrderShow::selectById(" WHERE `order`.`order_id` =" . $id),
+            'header' => titleheader('Halaman Order Detail', 'h1', 'text-center mb-3')
+        ]);
+    }
 }
+
+
 class Contact
 {
     static function index()
     {
-        view('shop/contact', ['header' => titleheader('Halaman Contact', 'h1', 'text-center mb-3')]);
+        view('shop/contact', ['header' => titleheader('Halaman contact', 'h1', 'text-center mb-3')]);
     }
 }
